@@ -26,6 +26,9 @@
 #include "configs.hpp"
 #include "include.hpp"
 
+class Slot;
+class Scheduler;
+
 /**
  * @brief Single slot of pending actions
  *
@@ -37,6 +40,9 @@ class Slot {
   bool valid;
   void (*func)(void);
   uint64_t time;
+
+ public:
+  Slot();
 };
 
 /**
@@ -64,6 +70,9 @@ class Scheduler {
  public:
   // Scheduler User Functions
   void schedule(uint64_t, void (*func)(void));
+
+ public:
+  Scheduler();
 };
 
 #define INITIALIZE_SCHEDULER()
