@@ -29,16 +29,14 @@ For the LED-button example above, this in code, will look like below.
 volatile bool running = true;
 
 void turn_on_led(void) {
-  if (running) {
+  if (running)
     digitalWrite(ledPin, HIGH);
-    scheduler.schedule(turn_off_led, 100);
-  }
+  scheduler.schedule(turn_off_led, 100);
 }
 void turn_off_led(void) {
-  if (running) {
+  if (running)
     digitalWrite(ledPin, LOW);
-    scheduler.schedule(turn_on_led, 100);
-  }
+  scheduler.schedule(turn_on_led, 100);
 }
 setup() {
   turn_on_led(); // Or scheduler.schedule(turn_on_led, 0);
