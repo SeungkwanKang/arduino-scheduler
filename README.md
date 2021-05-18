@@ -26,7 +26,7 @@ Specifically, using the scheduler, the programmer doesn't have the responsibilit
 For the LED-button example above, this in code, will look like below.
 
 ```c++
-volatile bool running = false;
+volatile bool running = true;
 
 void turn_on_led(void) {
   if (running) {
