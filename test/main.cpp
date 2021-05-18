@@ -22,12 +22,7 @@
 
 #include "../src/scheduler.hpp"
 
-INITIALIZE_SCHEDULER();
-
-#ifndef DEBUG
-int ledPin = LED_BUILTIN;
-volatile int ledState = LOW;
-#endif
+INITIALIZE_SCHEDULER(MILISECOND);
 
 const uint64_t interval = 1000;
 
@@ -37,15 +32,10 @@ void alarmFunctionExample(void) {
 #endif
 }
 
-void setup() {
-#ifndef DEBUG
-  pinMode(ledPin, OUTPUT);
-#endif
-}
+void setup() {}
 
 void loop() {}
 
-#ifdef DEBUG
 int main() {
   setup();
   while (1) {
@@ -53,4 +43,3 @@ int main() {
   }
   return 0;
 }
-#endif
