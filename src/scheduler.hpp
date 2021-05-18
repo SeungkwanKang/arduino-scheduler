@@ -31,7 +31,6 @@ class Scheduler;
 
 /**
  * @brief Single slot of pending actions
- *
  */
 class Slot {
   friend Scheduler;
@@ -41,7 +40,7 @@ class Slot {
   void (*func)(void);
   uint64_t time;
 
- public:
+ private:  // Only Scheduler can initiate Slot
   Slot();
 };
 
