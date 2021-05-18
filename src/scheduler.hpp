@@ -47,21 +47,22 @@ class Slot {
 
 /**
  * @brief Main scheduler
- *
  */
 class Scheduler {
+  // ! Global variables
  private:
-  // Global variables
   uint64_t __time;
   Slot __slots[MAX_SCHEDULE];
 
+  // ! Setting Functions
  private:
   // Setting Helper Functions
+  void __setTimerPrecision(PRECISION);
 
  public:
   // Setting User Functions
-  void setTimerPrecision(int);
 
+  // ! Scheduler Functions
  private:
   // Scheduler Helper Functions
   Slot* __allocSlot();
@@ -71,8 +72,9 @@ class Scheduler {
   // Scheduler User Functions
   void schedule(uint64_t, void (*func)(void));
 
+  // ! Constructor
  public:
-  Scheduler();
+  Scheduler(PRECISION);
 };
 
 #define INITIALIZE_SCHEDULER()
