@@ -17,3 +17,7 @@ main: $(TEST_FILE) $(LIB_FILES)
 
 debug: $(TEST_FILE) $(LIB_FILES)
 	$(CC) $(CFLAGS) $(CFLAGS_DEBUG) -o $@ $^
+
+.PHONY: clean
+clean:
+	rm main debug *.o
