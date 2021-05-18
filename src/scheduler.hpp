@@ -76,6 +76,13 @@ class Scheduler {
   Scheduler(PRECISION);
 };
 
-#define INITIALIZE_SCHEDULER()
+/**
+ * @brief Global initializer
+ * @detials A macro function used to initialize the scheduler.
+ * This function...
+ *  - Initialized the timer interrupt service routine
+ *  - Calls the constructor of Scheduler, creating a global scheduler
+ */
+#define INITIALIZE_SCHEDULER(t) Scheduler shed(t)
 
 #endif  // __SCHEDULER_HPP_
