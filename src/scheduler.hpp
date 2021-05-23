@@ -78,7 +78,7 @@ class Scheduler {
 
 /**
  * @brief Global initializer
- * @detials A macro function used to initialize the scheduler.
+ * @details A macro function used to initialize the scheduler.
  * This function...
  *  - Initialized the timer interrupt service routine
  *  - Calls the constructor of Scheduler, creating a global scheduler

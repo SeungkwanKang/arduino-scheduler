@@ -22,7 +22,7 @@
 
 #include "../src/scheduler.hpp"
 
-INITIALIZE_SCHEDULER(MILISECOND);
+INITIALIZE_SCHEDULER(MILLISECOND);
 
 const uint64_t interval = 1000;
 
