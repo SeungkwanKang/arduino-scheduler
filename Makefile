@@ -11,7 +11,7 @@ LIB_FILES_DEBUG := $(addprefix ./build/debug/,$(LIB_FILES))
 
 .PHONY: all flash compile
 all: main debug
-flash: all
+flash: main
 compile: ./build/main/main.hex debug
 
 ./build/main/%.o: src/%.cpp
