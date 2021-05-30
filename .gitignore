@@ -33,3 +33,5 @@
 
 main
 debug
+.vscode/
+build
