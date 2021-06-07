@@ -27,6 +27,7 @@
 extern "C" {
 #endif
 
+// Common includes
 #include <alloca.h>
 #include <assert.h>
 #include <stdint.h>
@@ -35,11 +36,14 @@ extern "C" {
 
 #ifndef DEBUG
 #if defined(__AVR_ATmega328P__)
+// Includes only for AVR
 #include "avr/interrupt.h"
 #else  // ifndef DEBUG && ifndef __AVR_ATmega328P__
 #error "Currently only ATmega328P (aka Arduino Uno) is supported."
-#endif  // ifdef __AVR_ATmega328P__
-#endif  // ifndef DEBUG
+#endif
+#else  // ifdef DEBUG
+// Includes only for debug
+#endif
 
 #ifdef __cplusplus
 }
