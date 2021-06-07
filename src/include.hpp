@@ -23,9 +23,26 @@
 #ifndef __INCLUDE_HPP_
 #define __INCLUDE_HPP_
 
-#include <cstdint>
-#ifdef DEBUG
-#include <iostream>
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <alloca.h>
+#include <assert.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef DEBUG
+#if defined(__AVR_ATmega328P__)
+#include "avr/interrupt.h"
+#else  // ifndef DEBUG && ifndef __AVR_ATmega328P__
+#error "Currently only ATmega328P (aka Arduino Uno) is supported."
+#endif  // ifdef __AVR_ATmega328P__
+#endif  // ifndef DEBUG
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif  // __INCLUDE_HPP_
